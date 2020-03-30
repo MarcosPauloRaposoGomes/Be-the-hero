@@ -14,6 +14,18 @@ module.exports = {
     useNullAsDefault: true,//Temos passar essa propriedade pq por padrão o sqlite não suporta a inserção de default value "Valores padrão para as colunas do banco de dados" e com essa propriedade atribuimos nulo a essas valores
   },
 
+  //Teste do banco de dados
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/test.sqlite'
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true,
+  },
+
   staging: {
     //ambiente de produção para o time de desenvolvimento, simula a produção para que o time de desenvolvimento simule a aplicação online
     client: 'postgresql',
